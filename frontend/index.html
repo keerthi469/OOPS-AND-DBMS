@@ -1,0 +1,125 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParkEase | Smart Parking Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body><header>
+    <h1>🅿️ ParkEase</h1>
+    <p>Smart Parking Lot Management System</p>
+</header>
+
+<main>
+    <section class="dashboard">
+        <div class="card">
+            <h3>Total Slots</h3>
+            <p id="totalSlots">20</p>
+        </div>
+
+        <div class="card">
+            <h3>Available Slots</h3>
+            <p id="availableSlots">20</p>
+        </div>
+
+        <div class="card">
+            <h3>Occupied Slots</h3>
+            <p id="occupiedSlots">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Total Collection</h3>
+            <p id="collection">₹0</p>
+        </div>
+    </section>
+
+    <section class="panel">
+        <h2>🚗 Vehicle Entry</h2>
+
+        <form id="entryForm">
+            <label for="vehicleNumber">Vehicle Number</label>
+            <input
+                type="text"
+                id="vehicleNumber"
+                placeholder="TN37AB1234"
+                required
+            >
+
+            <label for="vehicleType">Vehicle Type</label>
+            <select id="vehicleType" required>
+                <option value="">Select vehicle type</option>
+                <option value="BIKE">Bike — ₹10/hour</option>
+                <option value="CAR">Car — ₹30/hour</option>
+                <option value="TRUCK">Truck — ₹60/hour</option>
+            </select>
+
+            <button type="submit">Park Vehicle</button>
+        </form>
+
+        <div id="entryMessage" role="status"></div>
+    </section>
+
+    <section class="panel">
+        <h2>🅿️ Parking Slot Map</h2>
+
+        <div class="legend">
+            <span>🟢 Available</span>
+            <span>🔴 Occupied</span>
+        </div>
+
+        <div id="parkingGrid" class="parking-grid"></div>
+    </section>
+
+    <section class="panel">
+        <h2>🚪 Vehicle Exit</h2>
+
+        <form id="exitForm">
+            <label for="exitVehicleNumber">Vehicle Number</label>
+            <input
+                type="text"
+                id="exitVehicleNumber"
+                placeholder="Enter parked vehicle number"
+                required
+            >
+
+            <button type="submit" class="exit-button">Process Exit</button>
+        </form>
+
+        <div id="exitMessage" role="status"></div>
+    </section>
+
+    <section class="panel">
+        <h2>📋 Parking History</h2>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ticket</th>
+                        <th>Vehicle Number</th>
+                        <th>Type</th>
+                        <th>Slot</th>
+                        <th>Entry Time</th>
+                        <th>Status</th>
+                        <th>Fee</th>
+                    </tr>
+                </thead>
+
+                <tbody id="historyBody">
+                    <tr>
+                        <td colspan="7">No parking records yet.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>ParkEase © 2026 | Smart Parking Management</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
